@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import dotenv from "dotenv";
 import { MongoClient } from "mongodb";
+import data from "./routes/index.js";
 
 dotenv.config();
 
@@ -12,7 +13,7 @@ const dbPassword = process.env.DB_PASSWORD;
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
-
+app.use("/", data);
 
 const uri = `mongodb+srv://${dbUser}:${dbPassword}@nozama.4utnpbc.mongodb.net/?retryWrites=true&w=majority`;
 
