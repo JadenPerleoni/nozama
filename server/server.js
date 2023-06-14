@@ -15,7 +15,7 @@ app.use(cors());
 
 
 const uri =
-  "mongodb+srv://jadenperleoni:swaggoat12@nozama.4utnpbc.mongodb.net/?retryWrites=true&w=majority";
+  `mongodb+srv://${dbUser}:${dbPassword}@nozama.4utnpbc.mongodb.net/?retryWrites=true&w=majority`;
 
 MongoClient.connect(uri, { useUnifiedTopology: true })
   .then((client) => {
@@ -26,8 +26,8 @@ MongoClient.connect(uri, { useUnifiedTopology: true })
 
     // Other Express.js middleware and routes that require database access
 
-    app.listen(3000, () => {
-      console.log("Server is running on port 3000");
+    app.listen(4000, () => {
+      console.log("Server is running on port 4000");
     });
   })
   .catch((err) => {
