@@ -15,7 +15,6 @@ app.use(cors());
 
 
 const uri =
-  "mongodb+srv://jadenperleoni:swaggoat12@nozama.4utnpbc.mongodb.net/?retryWrites=true&w=majority";
 
 MongoClient.connect(uri, { useUnifiedTopology: true })
   .then((client) => {
