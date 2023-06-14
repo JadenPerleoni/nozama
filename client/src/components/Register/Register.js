@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { register } from "../../api/index.js";
 
 function Register() {
   const [registerInfo, setRegisterInfo] = useState({
@@ -10,6 +11,7 @@ function Register() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log(registerInfo);
+    await register(registerInfo);
   };
 
   return (
