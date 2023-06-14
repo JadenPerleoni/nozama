@@ -5,6 +5,6 @@ const router = express.Router();
 
 //localhost:4000/
 
-router.get("/register", register);
+router.post("/register", register);
 
 export default router;
