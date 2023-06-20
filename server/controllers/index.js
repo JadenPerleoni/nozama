@@ -8,7 +8,6 @@ export const register = async (req, res) => {
   });
 
   try {
-    console.log(userData);
     await userData.save();
     res.send("User created successfully");
   } catch (error) {
