@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { register } from "../../api/index.js";
+import { useNavigate } from "react-router-dom";
 
 function Register() {
+  const navigate = useNavigate();
+
   const [registerInfo, setRegisterInfo] = useState({
     email: "",
     username: "",
@@ -12,6 +15,7 @@ function Register() {
     event.preventDefault();
     console.log(registerInfo);
     await register(registerInfo);
+    navigate(`Login`);
   };
 
   return (

@@ -3,6 +3,7 @@ import { login } from "../../api/index.js";
 import { useNavigate } from "react-router-dom";
 
 function Login() {
+  const navigate = useNavigate();
   const [loginInfo, setLoginInfo] = useState({
     username: "",
     password: "",
@@ -11,6 +12,7 @@ function Login() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     await login(loginInfo);
+    navigate(`../`)
   };
   return (
     <div className="App">
