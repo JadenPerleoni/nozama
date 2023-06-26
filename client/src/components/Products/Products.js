@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { browse } from "../../api/ebay";
+import { browse } from "../../api/index";
 
 function Products() {
   const [products, setProducts] = useState([]);

@@ -9,6 +9,7 @@ const params = {
   q: "fart",
   minPrice: "0.0",
   maxPrice: "1000.0",
+  limit: 15,
   sortOrder: "PRICE_PLUS_SHIPPING_LOWEST",
 };
 

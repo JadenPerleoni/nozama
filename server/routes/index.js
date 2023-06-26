@@ -2,6 +2,11 @@ import express from "express";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import UserInfo from "../models/userInfo.js";
+import axios from "axios";
+import dotenv from "dotenv";
+
+dotenv.config();
+const authToken = process.env.AUTH_TOKEN;
 
 const router = express.Router();
 
@@ -74,4 +79,27 @@ const verifyToken = (req, res, next) => {
 router.get("/protectedresource", verifyToken, (req, res) => {
   res.json({ message: "Protected route accessed successfully" });
 });
+
+router.get("/search", async (req, res) => {
+  try {
+    const response = await axios.get(
+      "https://api.ebay.com/buy/browse/v1/item_summary/search",
+      {
+        headers: {
+          Authorization: `Bearer ${authToken}`,
+          "Content-Type": "application/json",
+          "X-EBAY-C-MARKETPLACE-ID": "EBAY-US",
+        },
+        params: req.query,
+      }
+    );
+    res.json(response.data);
+  } catch (error) {
+    console.error(error);
+    res
+      .status(500)
+      .json({ error: "An error occurred while fetching eBay data." });
+  }
+});
+
 export default router;
