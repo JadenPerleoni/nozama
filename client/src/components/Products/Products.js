@@ -12,10 +12,13 @@ function Products() {
     <div>
       <h1>Dogecoin(steal )</h1>
       {products.map((product) => (
-        <div key={product.itemId}>
+        <div className="ebay-items" key={product.itemId}>
           <img src={product.image.imageUrl} alt={product.title} />
           <h3>{product.title}</h3>
           <p>Rating: {product.averageRating}</p>{" "}
+          <p>Price: ${product.price.value}</p>{" "}
+
+
         </div>
       ))}
     </div>
