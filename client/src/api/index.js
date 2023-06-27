@@ -5,6 +5,7 @@ export const register = (newUser) => axios.post(`${url}/register`, newUser);
 export const login = (user) =>
   axios.post(`${url}/login`, user).then((res) => {
     sessionStorage.setItem("token", res.data.token);
+    sessionStorage.setItem("userId",res.data.user._id);
   });
 
 export const browse = (query) =>

@@ -4,6 +4,7 @@ import jwt from "jsonwebtoken";
 import UserInfo from "../models/userInfo.js";
 import axios from "axios";
 import dotenv from "dotenv";
+import { ObjectId } from "mongodb";
 
 dotenv.config();
 const authToken = process.env.AUTH_TOKEN;
@@ -50,7 +51,7 @@ router.post("/login", async (req, res) => {
       "swaggoat12"
     );
 
-    res.json({ token });
+    res.json({ token, user });
   } catch (error) {
     res.status(500).json({ message: "Error signing in" });
   }
@@ -103,9 +104,13 @@ router.get("/search", async (req, res) => {
 });
 
 // Adds item id to Array in database attached to user's account.
-router.post("/cart/add",verifyToken,(req,res) => {
-  
-  
-})
+router.post("/cart/add", verifyToken, async (req, res) => {
+  const userId = req.headers["userid"];
+
+  const query = { _id: new ObjectId(userId) };
+  const user = await UserInfo.findOne(query);
+
+  res.json(user);
+});
 
 export default router;
