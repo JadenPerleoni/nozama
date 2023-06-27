@@ -33,4 +33,10 @@ label {
 
 .ebay-items {
   border: 2px solid #e41212;
+  width: 50%;
+  display:block;
+  padding: 10px;
+}
+.search-bar {
+  width: 40%;
 }

@@ -7,11 +7,11 @@ export const login = (user) =>
     sessionStorage.setItem("token", res.data.token);
   });
 
-export const browse = () =>
+export const browse = (query) =>
   axios
     .get(`${url}/search`, {
       params: {
-        q: "phone",
+        q: query,
         minPrice: "0.0",
         maxPrice: "1000.0",
         sortOrder: "PRICE_PLUS_SHIPPING_LOWEST",
@@ -20,7 +20,6 @@ export const browse = () =>
       },
     })
     .then((response) => {
-      console.log(response.data);
       return response.data;
     })
     .catch((error) => {
