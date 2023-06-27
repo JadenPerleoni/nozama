@@ -15,7 +15,7 @@ function Register() {
     event.preventDefault();
     console.log(registerInfo);
     await register(registerInfo);
-    navigate(`Login`);
+    navigate(`../login`);
   };
 
   return (

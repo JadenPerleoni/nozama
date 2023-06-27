@@ -106,11 +106,20 @@ router.get("/search", async (req, res) => {
 // Adds item id to Array in database attached to user's account.
 router.post("/cart/add", verifyToken, async (req, res) => {
   const userId = req.headers["userid"];
+  const item = req.body.itemId;
 
-  const query = { _id: new ObjectId(userId) };
-  const user = await UserInfo.findOne(query);
+  try {
+    // Finds the user who wants to update their cart
+    const query = { _id: new ObjectId(userId) };
+    // Command to push the item id to the user's cart
+    const newItem = { $push: { cart: item } };
+    // Pushes the item to the user's cart and stores the result.
+    const result = await UserInfo.updateOne(query, newItem);
 
-  res.json(user);
+    res.json(result);
+  } catch (error) {
+    res.status(500).json(error);
+  }
 });
 
 export default router;
