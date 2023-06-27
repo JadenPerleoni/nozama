@@ -43,3 +43,7 @@ export const addItem = (itemId) => {
       console.error(error);
     });
 };
+
+export const getCart = () => {
+  
+}

@@ -97,9 +97,7 @@ router.get("/search", async (req, res) => {
     res.json(response.data);
   } catch (error) {
     console.error(error);
-    res
-      .status(500)
-      .json(error);
+    res.status(500).json(error);
   }
 });
 
@@ -117,8 +115,36 @@ router.post("/cart/add", verifyToken, async (req, res) => {
     // Pushes the item to the user's cart and stores the result.
     const result = await UserInfo.updateOne(query, newItem);
 
-
     res.json(result);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+router.get("/cart/retrieve", verifyToken, async (req, res) => {
+  const userId = req.headers["userid"];
+  const items = [];
+
+  try {
+    const query = { _id: new ObjectId(userId) };
+    const user = await UserInfo.findOne(query);
+    if (!user) {
+      return res.status(404).json({ message: "Cart not found" });
+    }
+    const cart = user.cart;
+    // for (let i = 0; i < cart.length; i++) {
+
+    // }
+    const encodedId = encodeURIComponent(cart[0]);
+    console.log(encodedId);
+    const response = await axios.get(
+      `https://api.ebay.com/buy/browse/v1/item/${encodedId}`,
+      {
+        headers: {
+          Authorization: `Bearer ${authToken}`,
+        },
+      }
+    );
+    res.json(response.data);
   } catch (error) {
     res.status(500).json(error);
   }
