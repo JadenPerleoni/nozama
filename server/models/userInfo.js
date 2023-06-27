@@ -15,6 +15,9 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  cart: {
+    type: Array,
+  }
 });
 const UserInfo = mongoose.model("UserInfo", userSchema);
 

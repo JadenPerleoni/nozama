@@ -102,4 +102,10 @@ router.get("/search", async (req, res) => {
   }
 });
 
+// Adds item id to Array in database attached to user's account.
+router.post("/cart/add",verifyToken,(req,res) => {
+  
+  
+})
+
 export default router;

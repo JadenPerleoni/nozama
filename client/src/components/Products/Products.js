@@ -13,7 +13,7 @@ function Products() {
 
   return (
     <div>
-      <h1>Dogecoin(steal )</h1>
+      <h1>Nozama marketplace</h1>
 
       <form onSubmit={handleSearch}>
         <input
@@ -25,7 +25,7 @@ function Products() {
             setSearchItems(e.target.value);
           }}
         ></input>
-        <input type="submit" value="Submit"></input>
+        <input type="submit" value="Search"></input>
       </form>
 
       {products.map((product) => (
