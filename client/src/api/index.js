@@ -5,7 +5,7 @@ export const register = (newUser) => axios.post(`${url}/register`, newUser);
 export const login = (user) =>
   axios.post(`${url}/login`, user).then((res) => {
     sessionStorage.setItem("token", res.data.token);
-    sessionStorage.setItem("userId",res.data.user._id);
+    sessionStorage.setItem("userId", res.data.user._id);
   });
 
 export const browse = (query) =>
@@ -21,10 +21,25 @@ export const browse = (query) =>
       },
     })
     .then((response) => {
-      console.log(response.data);
 
       return response.data;
     })
     .catch((error) => {
       console.log(error);
     });
+
+export const addItem = (itemId) => {
+  const headers = {
+    Authorization: sessionStorage.getItem("token"),
+    UserID: sessionStorage.getItem("userId"),
+  };
+  console.log(itemId);
+  axios
+    .post(`${url}/cart/add`, {itemId: itemId}, { headers })
+    .then((res) => {
+      console.log(res.data);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+};

@@ -99,7 +99,7 @@ router.get("/search", async (req, res) => {
     console.error(error);
     res
       .status(500)
-      .json({ error: "An error occurred while fetching eBay data." });
+      .json(error);
   }
 });
 
@@ -107,6 +107,7 @@ router.get("/search", async (req, res) => {
 router.post("/cart/add", verifyToken, async (req, res) => {
   const userId = req.headers["userid"];
   const item = req.body.itemId;
+  console.log(req.body);
 
   try {
     // Finds the user who wants to update their cart
@@ -115,6 +116,7 @@ router.post("/cart/add", verifyToken, async (req, res) => {
     const newItem = { $push: { cart: item } };
     // Pushes the item to the user's cart and stores the result.
     const result = await UserInfo.updateOne(query, newItem);
+
 
     res.json(result);
   } catch (error) {

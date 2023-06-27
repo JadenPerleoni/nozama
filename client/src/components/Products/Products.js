@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
-import { browse } from "../../api/index";
+import { browse, addItem } from "../../api/index";
+import Product  from "../Product/Product";
 
 function Products() {
   const [products, setProducts] = useState([]);
   const [searchItems, setSearchItems] = useState([]);
 
-
   const handleSearch = async (event) => {
     event.preventDefault();
     browse(searchItems).then((res) => setProducts(res.itemSummaries));
   };
+
 
   return (
     <div>
@@ -29,12 +30,7 @@ function Products() {
       </form>
 
       {products.map((product) => (
-        <div className="ebay-items" key={product.itemId}>
-          <img src={product.image.imageUrl} alt={product.title} />
-          <h3>{product.title}</h3>
-          <p>Rating: {product.averageRating}</p>{" "}
-          <p>Price: ${product.price.value}</p>{" "}
-        </div>
+          <Product key = {product.id} item={product}></Product>
       ))}
     </div>
   );
