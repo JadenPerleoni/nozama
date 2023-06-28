@@ -120,6 +120,9 @@ router.post("/cart/add", verifyToken, async (req, res) => {
     res.status(500).json(error);
   }
 });
+
+
+// Route to retrieve item data to display in cart.
 router.get("/cart/retrieve", verifyToken, async (req, res) => {
   const userId = req.headers["userid"];
   const items = [];
@@ -131,20 +134,20 @@ router.get("/cart/retrieve", verifyToken, async (req, res) => {
       return res.status(404).json({ message: "Cart not found" });
     }
     const cart = user.cart;
-    // for (let i = 0; i < cart.length; i++) {
 
-    // }
-    const encodedId = encodeURIComponent(cart[0]);
-    console.log(encodedId);
-    const response = await axios.get(
-      `https://api.ebay.com/buy/browse/v1/item/${encodedId}`,
-      {
+    console.log(cart);
+    for (const itemId of cart) {
+      const encodedItemId = encodeURIComponent(itemId);
+      console.log(encodedItemId);
+      const url = `https://api.ebay.com/buy/browse/v1/item/${encodedItemId}`;
+      const response = await axios.get(url, {
         headers: {
           Authorization: `Bearer ${authToken}`,
         },
-      }
-    );
-    res.json(response.data);
+      });
+      items.push(response.data);
+    }
+    res.json(items);
   } catch (error) {
     res.status(500).json(error);
   }
