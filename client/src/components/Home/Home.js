@@ -5,7 +5,10 @@ function Home() {
     <div>
       <h1>Nozama</h1>
       <h3>Please check out our lucrative products!</h3>
-      <Link to="/products">Market</Link>
+      <p></p><Link to="/products">Market</Link>
+      <Link to="/register">Register</Link>
+      <Link to="/login">Login</Link>
+
     </div>
   );
 }
