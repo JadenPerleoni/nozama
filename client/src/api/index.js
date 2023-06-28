@@ -6,6 +6,7 @@ export const login = (user) =>
   axios.post(`${url}/login`, user).then((res) => {
     sessionStorage.setItem("token", res.data.token);
     sessionStorage.setItem("userId", res.data.user._id);
+    sessionStorage.setItem("username", user.username);
   });
 
 export const browse = (query) =>

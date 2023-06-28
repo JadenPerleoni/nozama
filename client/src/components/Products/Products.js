@@ -1,8 +1,12 @@
 import { useState } from "react";
 import { browse } from "../../api/index";
 import Product from "../Product/Product";
+import { useNavigate } from "react-router-dom";
+
+
 
 function Products() {
+  const navigate = useNavigate();
   const [products, setProducts] = useState([]);
   const [searchItems, setSearchItems] = useState([]);
 
@@ -10,6 +14,10 @@ function Products() {
     event.preventDefault();
     browse(searchItems).then((res) => setProducts(res.itemSummaries));
   };
+  const viewCart = (event) => {
+    event.preventDefault();
+    navigate(`../cart`)
+  }
 
   return (
     <div>
@@ -27,6 +35,8 @@ function Products() {
         ></input>
         <input type="submit" value="Search"></input>
       </form>
+      <button onClick={viewCart}>View Cart</button>
+
 
       {products.map((product, index) => (
         <Product key={index} item={product}></Product>
