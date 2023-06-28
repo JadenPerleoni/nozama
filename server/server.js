@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import data from "./routes/index.js";
 import mongoose from "mongoose";
 
+
 dotenv.config();
 
 const dbUser = process.env.DB_USERNAME;

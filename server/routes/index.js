@@ -3,11 +3,11 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import UserInfo from "../models/userInfo.js";
 import axios from "axios";
-import dotenv from "dotenv";
 import { ObjectId } from "mongodb";
+import { getAuthToken } from "../authToken.js";
 
-dotenv.config();
-const authToken = process.env.AUTH_TOKEN;
+const authToken = await getAuthToken();
+
 
 const router = express.Router();
 
@@ -121,7 +121,6 @@ router.post("/cart/add", verifyToken, async (req, res) => {
   }
 });
 
-
 // Route to retrieve item data to display in cart.
 router.get("/cart/retrieve", verifyToken, async (req, res) => {
   const userId = req.headers["userid"];
@@ -135,10 +134,8 @@ router.get("/cart/retrieve", verifyToken, async (req, res) => {
     }
     const cart = user.cart;
 
-    console.log(cart);
     for (const itemId of cart) {
       const encodedItemId = encodeURIComponent(itemId);
-      console.log(encodedItemId);
       const url = `https://api.ebay.com/buy/browse/v1/item/${encodedItemId}`;
       const response = await axios.get(url, {
         headers: {

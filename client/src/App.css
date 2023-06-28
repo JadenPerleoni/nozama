@@ -34,9 +34,23 @@ label {
 .ebay-items {
   border: 2px solid #e41212;
   width: 50%;
-  display:block;
+  display: block;
   padding: 10px;
 }
 .search-bar {
   width: 100%;
 }
+
+.cart-item {
+  border: 2px solid #e41212;
+  width: 50%;
+  padding: 15px;
+  display: block;
+  margin: 5px;
+  
+}
+img {
+  width: 225px;
+  height: 225px;
+}
+

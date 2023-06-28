@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import { browse, addItem } from "../../api/index";
-import Product  from "../Product/Product";
+import { useState } from "react";
+import { browse } from "../../api/index";
+import Product from "../Product/Product";
 
 function Products() {
   const [products, setProducts] = useState([]);
@@ -10,7 +10,6 @@ function Products() {
     event.preventDefault();
     browse(searchItems).then((res) => setProducts(res.itemSummaries));
   };
-
 
   return (
     <div>
@@ -29,9 +28,8 @@ function Products() {
         <input type="submit" value="Search"></input>
       </form>
 
-      {products.map((product,index) => (
-        
-          <Product key={index} item={product}></Product>
+      {products.map((product, index) => (
+        <Product key={index} item={product}></Product>
       ))}
     </div>
   );

@@ -21,7 +21,6 @@ export const browse = (query) =>
       },
     })
     .then((response) => {
-
       return response.data;
     })
     .catch((error) => {
@@ -35,7 +34,7 @@ export const addItem = (itemId) => {
   };
   console.log(itemId);
   axios
-    .post(`${url}/cart/add`, {itemId: itemId}, { headers })
+    .post(`${url}/cart/add`, { itemId: itemId }, { headers })
     .then((res) => {
       console.log(res.data);
     })
@@ -44,6 +43,17 @@ export const addItem = (itemId) => {
     });
 };
 
-export const getCart = () => {
-  
-}
+export const getCart = async () => {
+  const headers = {
+    Authorization: sessionStorage.getItem("token"),
+    UserID: sessionStorage.getItem("userId"),
+  };
+  return axios
+    .get(`${url}/cart/retrieve`, { headers })
+    .then((response) => {
+      return response.data;
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+};
