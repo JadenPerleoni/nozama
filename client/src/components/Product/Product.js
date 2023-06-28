@@ -3,6 +3,7 @@ import { addItem } from "../../api";
 const Product = (item) => {
   const addToCart = () => {
     addItem(item.item.itemId)
+    console.log(item);
   };
 
   return (

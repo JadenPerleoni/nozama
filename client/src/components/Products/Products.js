@@ -29,8 +29,9 @@ function Products() {
         <input type="submit" value="Search"></input>
       </form>
 
-      {products.map((product) => (
-          <Product key = {product.id} item={product}></Product>
+      {products.map((product,index) => (
+        
+          <Product key={index} item={product}></Product>
       ))}
     </div>
   );
