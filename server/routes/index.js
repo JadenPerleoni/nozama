@@ -5,9 +5,9 @@ import UserInfo from "../models/userInfo.js";
 import axios from "axios";
 import { ObjectId } from "mongodb";
 import { getAuthToken } from "../authToken.js";
+import randomWord from "./randomWord.js";
 
 const authToken = await getAuthToken();
-
 
 const router = express.Router();
 
@@ -81,6 +81,7 @@ router.get("/protectedresource", verifyToken, (req, res) => {
   res.json({ message: "Protected route accessed successfully" });
 });
 
+// Route to search for items in ebay api
 router.get("/search", async (req, res) => {
   try {
     const response = await axios.get(
@@ -96,7 +97,6 @@ router.get("/search", async (req, res) => {
     );
     res.json(response.data);
   } catch (error) {
-    console.error(error);
     res.status(500).json(error);
   }
 });
@@ -149,5 +149,7 @@ router.get("/cart/retrieve", verifyToken, async (req, res) => {
     res.status(500).json(error);
   }
 });
+
+router.use(randomWord)
 
 export default router;

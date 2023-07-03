@@ -14,8 +14,6 @@ export const browse = (query) =>
     .get(`${url}/search`, {
       params: {
         q: query,
-        minPrice: "0.0",
-        maxPrice: "1000.0",
         sortOrder: "PRICE_PLUS_SHIPPING_LOWEST",
         rating: "BELOW_2",
         limit: 15,

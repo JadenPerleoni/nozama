@@ -1,21 +1,14 @@
 import { getCart } from "../../api";
 import { useState, useEffect } from "react";
 import Cartitem from "./Cartitem";
-import { useNavigate } from "react-router-dom";
 import Nav from "../Navigation/Nav";
 
 function Cart() {
-  const navigate = useNavigate();
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     getCart().then((res) => setProducts(res));
   }, []);
-
-  const browse = (event) => {
-    event.preventDefault();
-    navigate(`../products`);
-  };
 
   return (
     <div className="App">
