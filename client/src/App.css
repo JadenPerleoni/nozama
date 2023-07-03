@@ -80,7 +80,6 @@ button {
   list-style-type: none;
   display: flex;
   justify-content: center;
-
 }
 .nav-links li {
   margin-right: 10px;
@@ -95,7 +94,6 @@ button {
   padding: 5px 10px;
   border: 1px solid #333; /* Add border style */
   border-radius: 5px;
-
 }
 .nav-links a:hover {
   background-color: #f1f1f1;

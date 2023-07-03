@@ -14,7 +14,7 @@ function Cart() {
     <div className="App">
       <div className="cart-page">
         <h1>{sessionStorage.getItem("username")}'s Cart:</h1>
-       <Nav></Nav>
+        <Nav></Nav>
         <div className="item-container">
           {products.map((item, index) => (
             <Cartitem key={index} item={item}></Cartitem>

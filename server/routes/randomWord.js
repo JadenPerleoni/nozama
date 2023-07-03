@@ -1,9 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
 import axios from "axios";
-import { getAuthToken } from "../authToken.js";
-
-const authToken = await getAuthToken();
 
 dotenv.config();
 
@@ -29,7 +26,8 @@ router.get("/randomitem", async (req, res) => {
         limit: 1,
       },
     });
-    res.json(item.data);
+    console.log(randomWord);
+    res.json(item.data.itemSummaries);
   } catch (error) {
     res.status(500).json(error);
   }

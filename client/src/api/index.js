@@ -56,3 +56,13 @@ export const getCart = async () => {
       console.error(error);
     });
 };
+
+export const randomItem = async () =>
+  axios
+    .get(`${url}/randomitem`)
+    .then((response) => {
+      return response.data;
+    })
+    .catch((error) => {
+      console.error(error);
+    });
