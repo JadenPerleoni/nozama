@@ -2,6 +2,7 @@ import { getCart } from "../../api";
 import { useState, useEffect } from "react";
 import Cartitem from "./Cartitem";
 import { useNavigate } from "react-router-dom";
+import Nav from "../Navigation/Nav";
 
 function Cart() {
   const navigate = useNavigate();
@@ -17,13 +18,16 @@ function Cart() {
   };
 
   return (
-    <div>
-      <h1>{sessionStorage.getItem("username")}'s Cart:</h1>
-      <button onClick={browse}>Add more items</button>
-
-      {products.map((item, index) => (
-        <Cartitem key={index} item={item}></Cartitem>
-      ))}
+    <div className="App">
+      <div className="cart-page">
+        <h1>{sessionStorage.getItem("username")}'s Cart:</h1>
+       <Nav></Nav>
+        <div className="item-container">
+          {products.map((item, index) => (
+            <Cartitem key={index} item={item}></Cartitem>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

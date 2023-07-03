@@ -1,5 +1,6 @@
 import { addItem } from "../../api";
 
+// Displays product information and allows the user to add it to their cart.
 const Product = (item) => {
   const addToCart = () => {
     addItem(item.item.itemId)

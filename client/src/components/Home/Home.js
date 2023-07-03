@@ -1,14 +1,12 @@
-import { Link } from "react-router-dom";
+import Nav from "../Navigation/Nav";
 
 function Home() {
   return (
-    <div>
+    <div className="home">
       <h1>Nozama</h1>
-      <h3>Please check out our lucrative products!</h3>
-      <p></p><Link to="/products">Market</Link>
-      <Link to="/register">Register</Link>
-      <Link to="/login">Login</Link>
+      <Nav></Nav>
 
+      <h3>Please check out our lucrative products!</h3>
     </div>
   );
 }
