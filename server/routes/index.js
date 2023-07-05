@@ -105,7 +105,6 @@ router.get("/search", async (req, res) => {
 router.post("/cart/add", verifyToken, async (req, res) => {
   const userId = req.headers["userid"];
   const item = req.body.itemId;
-  console.log(req.body);
 
   try {
     // Finds the user who wants to update their cart
@@ -150,6 +149,25 @@ router.get("/cart/retrieve", verifyToken, async (req, res) => {
   }
 });
 
-router.use(randomWord)
+// Route to remove item from user's cart.
+router.post("/cart/remove", verifyToken, async (req, res) => {
+  const userId = req.headers["userid"];
+  const item = req.body.itemId;
+  try {
+    // Finds the user who wants to update their cart
+    const query = { _id: new ObjectId(userId) };
+    // Command to remove the item id from the user's cart
+    const newItem = { $pull: { cart: item } };
+    // Removes the item to the user's cart and stores the result.
+    const result = await UserInfo.updateOne(query, newItem);
+
+    res.json(result);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+
+});
+
+router.use(randomWord);
 
 export default router;

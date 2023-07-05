@@ -1,9 +1,13 @@
 import { addItem } from "../../api";
+import { useState } from "react";
 
 // Displays product information and allows the user to add it to their cart.
 const Product = (item) => {
+  const [itemAdded, setItemAdded] = useState(false);
+
   const addToCart = () => {
-    addItem(item.item.itemId)
+    addItem(item.item.itemId);
+    setItemAdded(true);
     console.log(item);
   };
 
@@ -14,6 +18,7 @@ const Product = (item) => {
       <p>Rating: {item.item.averageRating}</p>{" "}
       <p>Price: ${item.item.price.value}</p>{" "}
       <button onClick={addToCart}>Add to cart</button>
+      {itemAdded ? <p>Item added</p> : ""}
     </div>
   );
 };

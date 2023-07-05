@@ -26,7 +26,6 @@ router.get("/randomitem", async (req, res) => {
         limit: 1,
       },
     });
-    console.log(randomWord);
     res.json(item.data.itemSummaries);
   } catch (error) {
     res.status(500).json(error);
