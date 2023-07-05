@@ -44,7 +44,7 @@ label {
 
 .cart-item {
   border: 2px solid #e41212;
-  width: 50%;
+  width: 70%;
   padding: 15px;
   display: block;
   margin: 5px;
@@ -110,4 +110,11 @@ button {
   grid-template-columns: repeat(3, 1fr); /* Four columns with equal width */
   justify-content: center; /* Center items horizontally */ 
   margin-left: 100px;
+}
+.cart-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Four columns with equal width */
+  justify-content: center; /* Center items horizontally */ 
+  margin-left: 100px;
+  margin-top: 10px;
 }

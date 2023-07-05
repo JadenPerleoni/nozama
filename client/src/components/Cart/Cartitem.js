@@ -3,7 +3,7 @@ const Cartitem = ({ item, onRemove }) => {
     onRemove(item.itemId);
   };
   return (
-    <div className="cart-item">
+    <div>
       <h3>{item.title}</h3>
       <img src={item.image.imageUrl} alt={item.title} />
       <p>Price: ${item.price.value}</p>{" "}

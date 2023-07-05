@@ -22,13 +22,15 @@ function Cart() {
       <div className="cart-page">
         <h1>{sessionStorage.getItem("username")}'s Cart:</h1>
         <Nav></Nav>
-        <div className="item-container">
+        <div className="cart-container">
           {products.map((item, index) => (
-            <Cartitem
-              key={index}
-              item={item}
-              onRemove={handleRemoveItem}
-            ></Cartitem>
+            <div className="cart-item" key={index}>
+              <Cartitem
+                key={index}
+                item={item}
+                onRemove={handleRemoveItem}
+              ></Cartitem>
+            </div>
           ))}
         </div>
       </div>
