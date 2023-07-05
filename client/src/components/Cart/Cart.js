@@ -16,7 +16,6 @@ function Cart() {
         <h1>{sessionStorage.getItem("username")}'s Cart:</h1>
         <Nav></Nav>
         <div className="item-container">
-          {console.log(products)};
           {products.map((item, index) => (
             <Cartitem key={index} item={item}></Cartitem>
           ))}
