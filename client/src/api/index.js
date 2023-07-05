@@ -66,3 +66,19 @@ export const randomItem = async () =>
     .catch((error) => {
       console.error(error);
     });
+
+export const removeItem = (itemId) => {
+  const headers = {
+    Authorization: sessionStorage.getItem("token"),
+    UserID: sessionStorage.getItem("userId"),
+  };
+  console.log(itemId);
+  axios
+    .post(`${url}/cart/remove`, { itemId: itemId }, { headers })
+    .then((res) => {
+      console.log(res.data);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+};

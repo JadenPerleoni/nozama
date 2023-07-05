@@ -13,7 +13,6 @@ function Register() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(registerInfo);
     await register(registerInfo);
     navigate(`../login`);
   };

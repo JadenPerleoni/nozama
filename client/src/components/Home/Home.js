@@ -18,7 +18,6 @@ function Home() {
         <h3>Please check out our lucrative products!</h3>
         <h2>Check out this cool item!</h2>
         <div className="item-container">
-          {console.log(randomProd)}
 
           {randomProd.map((item, index) => (
             <Product key={index} item={item}></Product>
