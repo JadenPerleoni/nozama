@@ -72,7 +72,6 @@ export const removeItem = (itemId) => {
     Authorization: sessionStorage.getItem("token"),
     UserID: sessionStorage.getItem("userId"),
   };
-  console.log(itemId);
   axios
     .post(`${url}/cart/remove`, { itemId: itemId }, { headers })
     .then((res) => {

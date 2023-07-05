@@ -18,10 +18,11 @@ function Home() {
         <h3>Please check out our lucrative products!</h3>
         <h2>Check out this cool item!</h2>
         <div className="item-container">
-
+          <div className="ebay-items">
           {randomProd.map((item, index) => (
             <Product key={index} item={item}></Product>
           ))}
+          </div>
         </div>
       </div>
     </div>

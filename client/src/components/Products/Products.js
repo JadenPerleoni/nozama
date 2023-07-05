@@ -32,9 +32,11 @@ function Products() {
           <input type="submit" value="Search"></input>
         </form>
 
-        <div className="item-container">
+        <div className="browse-container">
           {products.map((product, index) => (
-            <Product key={index} item={product}></Product>
+            <div className="ebay-items" key={index}>
+              <Product key={index} item={product}></Product>
+            </div>
           ))}
         </div>
       </div>

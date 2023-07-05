@@ -12,7 +12,7 @@ const Product = (item) => {
   };
 
   return (
-    <div className="ebay-items">
+    <div>
       <img src={item.item.image.imageUrl} alt={item.title} />
       <h3>{item.item.title}</h3>
       <p>Rating: {item.item.averageRating}</p>{" "}

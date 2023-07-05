@@ -35,10 +35,11 @@ label {
 
 .ebay-items {
   border: 2px solid #e41212;
-  width: 50%;
+  width: 70%;
   display: block;
   padding: 10px;
   margin: 5px;
+
 }
 
 .cart-item {
@@ -56,6 +57,7 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 button {
   margin: 0 5px;
@@ -102,4 +104,10 @@ button {
 .active-link {
   background-color: #333;
   color: #fff;
+}
+.browse-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Four columns with equal width */
+  justify-content: center; /* Center items horizontally */ 
+  margin-left: 100px;
 }

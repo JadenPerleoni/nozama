@@ -4,7 +4,6 @@ const Cartitem = ({ item, onRemove }) => {
   };
   return (
     <div className="cart-item">
-      {console.log(item)}
       <h3>{item.title}</h3>
       <img src={item.image.imageUrl} alt={item.title} />
       <p>Price: ${item.price.value}</p>{" "}
