@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/nozama/static/css/main.4106b197.css",
-    "main.js": "/nozama/static/js/main.b6ed6e87.js",
+    "main.js": "/nozama/static/js/main.0fd35383.js",
     "index.html": "/nozama/index.html",
     "main.4106b197.css.map": "/nozama/static/css/main.4106b197.css.map",
-    "main.b6ed6e87.js.map": "/nozama/static/js/main.b6ed6e87.js.map"
+    "main.0fd35383.js.map": "/nozama/static/js/main.0fd35383.js.map"
   },
   "entrypoints": [
     "static/css/main.4106b197.css",
-    "static/js/main.b6ed6e87.js"
+    "static/js/main.0fd35383.js"
   ]
 }
