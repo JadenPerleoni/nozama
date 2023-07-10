@@ -1,6 +1,6 @@
 import axios from "axios";
 const url =
-  "https://00e6-2600-8801-8c00-3620-bdde-54ba-4df1-a0f9.ngrok-free.app";
+  "https://7eb5-2600-8801-8c00-3620-4622-279b-b449-2842.ngrok-free.app";
 
 export const register = (newUser) => axios.post(`${url}/register`, newUser);
 export const login = (user) =>

@@ -21,7 +21,6 @@ function Cart() {
     <div className="App">
       <div className="cart-page">
         <h1>{sessionStorage.getItem("username")}'s Cart:</h1>
-        <Nav></Nav>
         <div className="cart-container">
           {products.map((item, index) => (
             <div className="cart-item" key={index}>

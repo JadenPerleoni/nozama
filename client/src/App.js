@@ -5,28 +5,13 @@ import Register from "./components/Register/Register";
 import Login from "./components/Login/Login";
 import Products from "./components/Products/Products";
 import Cart from "./components/Cart/Cart";
+import Nav from "./components/Navigation/Nav";
 
 function App() {
   return (
     <div>
       <nav>
-        <div className="nav-links">
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/products">Market</Link>
-          </li>
-          <li>
-            <Link to="/cart">Cart</Link>
-          </li>
-          <li>
-            <Link to="/register">Register</Link>
-          </li>
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
-        </div>
+        <Nav />
       </nav>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>

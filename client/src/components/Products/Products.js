@@ -17,7 +17,6 @@ function Products() {
     <div className="App">
       <div className="market-page">
         <h1>Nozama marketplace</h1>
-        <Nav></Nav>
 
         <form onSubmit={handleSearch}>
           <input
