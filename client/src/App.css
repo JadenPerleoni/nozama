@@ -88,7 +88,7 @@ button {
 .nav-links {
   list-style-type: none;
   display: flex;
-  justify-content: center;
+  padding-top: 10px;
 }
 .nav-links li {
   margin-right: 10px;

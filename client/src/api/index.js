@@ -1,5 +1,5 @@
 import axios from "axios";
-const url = "https://e53c-160-227-21-2.ngrok-free.app";
+const url = "http://localhost:4000";
 
 export const register = (newUser) => axios.post(`${url}/register`, newUser);
 export const login = (user) =>
