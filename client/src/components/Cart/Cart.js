@@ -1,7 +1,6 @@
 import { getCart } from "../../api";
 import { useState, useEffect } from "react";
 import Cartitem from "./Cartitem";
-import Nav from "../Navigation/Nav";
 import { removeItem } from "../../api";
 
 function Cart() {

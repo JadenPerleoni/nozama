@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { browse } from "../../api/index";
 import Product from "../Product/Product";
-import Nav from "../Navigation/Nav";
 
 // Component that allows users to search for items
 

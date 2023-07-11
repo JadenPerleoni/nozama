@@ -1,4 +1,3 @@
-import Nav from "../Navigation/Nav";
 import { useState, useEffect } from "react";
 import Product from "../Product/Product";
 import { randomItem } from "../../api";
