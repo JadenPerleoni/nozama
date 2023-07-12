@@ -19,7 +19,7 @@ function Cart() {
   return (
     <div className="App">
       <div className="cart-page">
-        <h1>{sessionStorage.getItem("username")}'s Cart:</h1>
+        <h1 className="home-title">{sessionStorage.getItem("username")}'s Cart:</h1>
         <div className="cart-container">
           {products.map((item, index) => (
             <div className="cart-item" key={index}>

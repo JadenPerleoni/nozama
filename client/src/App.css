@@ -87,6 +87,8 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 250px;
+
 }
 .nav-links {
   list-style-type: none;
@@ -96,17 +98,17 @@ button {
   font-size: 18px;
   color: #ffffff;
   text-transform: uppercase;
-  letter-spacing: 2px;
   text-decoration: none;
   border: none;
   border-radius: 4px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   transition: background-color 0.3s ease;
-  width: 37%;
+  width: 480px;
 }
 
 .nav-links li {
   margin-right: 10px;
+  width: auto;
 }
 .nav-links li:last-child {
   margin-right: 0;
@@ -151,7 +153,9 @@ button {
   background-image: linear-gradient(to bottom, #00fffb, #00ff55);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  height: 50px;
+  height: 45px;
+  margin-top: 2px;
+  
 }
 h3 {
   font-family: "Arial", sans-serif;
