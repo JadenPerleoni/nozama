@@ -4,7 +4,7 @@ function Nav() {
   return (
     <div className="nav-links">
       <li>
-        <Link to="/">Home</Link>
+        <Link to="/nozama">Home</Link>
       </li>
       <li>
         <Link to="/products">Market</Link>

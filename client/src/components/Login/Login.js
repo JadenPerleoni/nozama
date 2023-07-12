@@ -9,15 +9,24 @@ function Login() {
     password: "",
   });
 
+  const [loginError, setLoginError] = useState(false);
   const handleSubmit = async (event) => {
     event.preventDefault();
-    await login(loginInfo);
-    navigate(`../`)
+
+    try {
+      await login(loginInfo);
+      navigate(`../nozama`);
+    } catch (error) {
+      console.log(error);
+      setLoginError(true);
+    }
   };
+
   return (
     <div className="App">
       <div className="login-form">
         <h1>Login</h1>
+        {loginError ? <p>Incorrect login information</p> : ""}
         <form onSubmit={handleSubmit}>
           <label>
             Username:
