@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/nozama/static/css/main.4106b197.css",
-    "main.js": "/nozama/static/js/main.0fd35383.js",
+    "main.css": "/nozama/static/css/main.4e53bc87.css",
+    "main.js": "/nozama/static/js/main.674bf9dd.js",
     "index.html": "/nozama/index.html",
-    "main.4106b197.css.map": "/nozama/static/css/main.4106b197.css.map",
-    "main.0fd35383.js.map": "/nozama/static/js/main.0fd35383.js.map"
+    "main.4e53bc87.css.map": "/nozama/static/css/main.4e53bc87.css.map",
+    "main.674bf9dd.js.map": "/nozama/static/js/main.674bf9dd.js.map"
   },
   "entrypoints": [
-    "static/css/main.4106b197.css",
-    "static/js/main.0fd35383.js"
+    "static/css/main.4e53bc87.css",
+    "static/js/main.674bf9dd.js"
   ]
 }
