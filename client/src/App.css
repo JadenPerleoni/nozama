@@ -1,6 +1,9 @@
 .App {
   text-align: center;
 }
+body {
+  background-color: grey;
+}
 
 .register-form {
   display: flex;
@@ -34,15 +37,14 @@ label {
 }
 
 .ebay-items {
-  border: 2px solid #e41212;
+  border: 2px solid #ff00ff;
   width: 70%;
   display: block;
   padding: 10px;
   margin: 5px;
-
 }
 .random-item {
-  border: 2px solid #e41212;
+  border: 2px solid #ff00ff;
   width: 50%;
   display: block;
   padding: 10px;
@@ -50,7 +52,7 @@ label {
 }
 
 .cart-item {
-  border: 2px solid #e41212;
+  border: 2px solid #ff00ff;
   width: 70%;
   padding: 15px;
   display: block;
@@ -74,6 +76,7 @@ button {
   flex-direction: column;
   align-items: center;
   width: 900px;
+  height: 100px;
 }
 .cart-page {
   display: flex;
@@ -88,8 +91,20 @@ button {
 .nav-links {
   list-style-type: none;
   display: flex;
-  padding-top: 10px;
+  padding: 12px 24px;
+  font-family: "Arial", sans-serif;
+  font-size: 18px;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+  width: 37%;
 }
+
 .nav-links li {
   margin-right: 10px;
 }
@@ -103,9 +118,10 @@ button {
   padding: 5px 10px;
   border: 1px solid #333; /* Add border style */
   border-radius: 5px;
+  background-color: #ff00ff;
 }
 .nav-links a:hover {
-  background-color: #f1f1f1;
+  background-color: #00ff55;
 }
 
 .active-link {
@@ -115,13 +131,64 @@ button {
 .browse-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* Four columns with equal width */
-  justify-content: center; /* Center items horizontally */ 
+  justify-content: center; /* Center items horizontally */
   margin-left: 100px;
 }
 .cart-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* Four columns with equal width */
-  justify-content: center; /* Center items horizontally */ 
+  justify-content: center; /* Center items horizontally */
   margin-left: 100px;
   margin-top: 10px;
+}
+.home-title {
+  font-family: "Arial", sans-serif;
+  font-size: 48px;
+  color: #ff00ff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5);
+  background-image: linear-gradient(to bottom, #00fffb, #00ff55);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  height: 50px;
+}
+h3 {
+  font-family: "Arial", sans-serif;
+  color: #ff00ff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  background-image: linear-gradient(to bottom, #00fffb, #00ff55);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.add-button {
+  display: inline-block;
+  padding: 12px 24px;
+  font-family: "Arial", sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: none;
+  background-color: #ff00ff;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+}
+.add-button:hover {
+  background-color: #00ff55;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+}
+h2 {
+  font-family: "Arial", sans-serif;
+  color: #ff00ff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  background-image: linear-gradient(to bottom, #ff00ff, #070707);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

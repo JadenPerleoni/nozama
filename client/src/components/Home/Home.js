@@ -11,7 +11,7 @@ function Home() {
   return (
     <div className="App">
       <div className="home">
-        <h1>Nozama</h1>
+        <h1 className="home-title">Nozama</h1>
 
         <h3>Please check out our lucrative products!</h3>
         <h2>Check out this cool item!</h2>

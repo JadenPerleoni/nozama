@@ -7,11 +7,12 @@ import Product from "../Product/Product";
 function Products() {
   const [products, setProducts] = useState([]);
   const [searchItems, setSearchItems] = useState([]);
-  const [sortingOption, setSortingOption] = useState("");
+  const [sortingOption, setSortingOption] = useState(false);
 
   const handleSearch = async (event) => {
     event.preventDefault();
     browse(searchItems).then((res) => setProducts(res.itemSummaries));
+    setSortingOption(true);
   };
 
   const handleSort = (sortOption) => {
@@ -32,7 +33,6 @@ function Products() {
         sortedProducts = products;
     }
     setProducts(sortedProducts);
-    setSortingOption(sortOption);
   };
   return (
     <div className="App">
@@ -51,11 +51,16 @@ function Products() {
           ></input>
           <input type="submit" value="Search"></input>
         </form>
-        <div>
-          Sort by:
-          <button onClick={() => handleSort("name")}>Item name</button>
-          <button onClick={() => handleSort("price")}>Item Price</button>
-        </div>
+
+        {sortingOption ? (
+          <div>
+            Sort by:
+            <button onClick={() => handleSort("name")}>Item name</button>
+            <button onClick={() => handleSort("price")}>Item Price (high to low)</button>
+          </div>
+        ) : (
+          ""
+        )}
 
         <div className="browse-container">
           {products.map((product, index) => (

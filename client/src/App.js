@@ -9,7 +9,7 @@ import Nav from "./components/Navigation/Nav";
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <nav>
         <Nav />
       </nav>

@@ -1,5 +1,5 @@
 import axios from "axios";
-const url = "http://localhost:4000";
+const url = "https://4d43-160-227-21-2.ngrok-free.app";
 
 export const register = (newUser) => axios.post(`${url}/register`, newUser);
 export const login = (user) =>
@@ -9,9 +9,14 @@ export const login = (user) =>
     sessionStorage.setItem("username", user.username);
   });
 
-export const browse = (query) =>
-  axios
+export const browse = async (query) => {
+  const headers = {
+    "ngrok-skip-browser-warning": "69420",
+  };
+  return axios
+
     .get(`${url}/search`, {
+      headers,
       params: {
         q: query,
         sortOrder: "PRICE_PLUS_SHIPPING_LOWEST",
@@ -25,11 +30,12 @@ export const browse = (query) =>
     .catch((error) => {
       console.log(error);
     });
-
+};
 export const addItem = (itemId) => {
   const headers = {
     Authorization: sessionStorage.getItem("token"),
     UserID: sessionStorage.getItem("userId"),
+    "ngrok-skip-browser-warning": "69420",
   };
   console.log(itemId);
   axios
@@ -46,6 +52,7 @@ export const getCart = async () => {
   const headers = {
     Authorization: sessionStorage.getItem("token"),
     UserID: sessionStorage.getItem("userId"),
+    "ngrok-skip-browser-warning": "69420",
   };
   return axios
     .get(`${url}/cart/retrieve`, { headers })
@@ -57,20 +64,24 @@ export const getCart = async () => {
     });
 };
 
-export const randomItem = async () =>
-  axios
-    .get(`${url}/randomitem`)
+export const randomItem = async () => {
+  const headers = {
+    "ngrok-skip-browser-warning": "69420",
+  };
+  return axios
+    .get(`${url}/randomitem`, { headers })
     .then((response) => {
       return response.data;
     })
     .catch((error) => {
       console.error(error);
     });
-
+};
 export const removeItem = (itemId) => {
   const headers = {
     Authorization: sessionStorage.getItem("token"),
     UserID: sessionStorage.getItem("userId"),
+    "ngrok-skip-browser-warning": "69420",
   };
   axios
     .post(`${url}/cart/remove`, { itemId: itemId }, { headers })
