@@ -37,7 +37,7 @@ function Products() {
   return (
     <div className="App">
       <div className="market-page">
-        <h1>Nozama marketplace</h1>
+        <h1 className="home-title">Nozama marketplace</h1>
 
         <form onSubmit={handleSearch}>
           <input

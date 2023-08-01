@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { login } from "../../api/index.js";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function Login() {
   const navigate = useNavigate();
@@ -52,6 +52,9 @@ function Login() {
           </label>
           <input type="submit" value="Submit"></input>
         </form>
+        <p>
+          <Link to="/register">Register</Link>
+        </p>
       </div>
     </div>
   );
